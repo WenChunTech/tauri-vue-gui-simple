@@ -24,10 +24,10 @@ jobs:
         with:
           node-version: 14
 
-      - name: install Rust stable
-        uses: actions-rs/toolchain@v2
+      - name: Setup | Rust
+        uses: ATiltedTree/setup-rust@v1
         with:
-          toolchain: stable
+          rust-version: stable
 
       - name: install dependencies 
         run : |
