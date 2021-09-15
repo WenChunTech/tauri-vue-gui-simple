@@ -77,10 +77,10 @@ jobs:
         with:
           rust-version: stable
 
-      - name: install dependencies 
-        run : |
-          brew install gcc
-          xcode-select --install
+#       - name: install dependencies 
+#         run : |
+#           brew install gcc
+#           xcode-select --install
 
       - name: build
         run : |
