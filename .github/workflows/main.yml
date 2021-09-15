@@ -3,7 +3,8 @@ name: TAURI-VUE-GUI-SIMPLE-CI
 on:
   push:
     tags:
-    - v*
+      - v*
+  workflow_dispatch:
 
 jobs:
 #   ubuntu-build:
