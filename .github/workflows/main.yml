@@ -131,7 +131,7 @@ jobs:
           
       - name: compress Release
         run : |
-          cd ./src-tauri/target/release/ && Compress-Archive -Path .\src-tauri\target\release\bundle\msi\* 'win-release.zip' && Compress-Archive -Path .\src-tauri\target\release\tauri-vue-gui-simple* -Update 'win-release.zip'
+          cd ./src-tauri/target/release/ && Compress-Archive -Path .\bundle\msi\* 'win-release.zip' && Compress-Archive -Path .\tauri-vue-gui-simple* -Update 'win-release.zip'
   
       - name: Create Release
         id: create_release
