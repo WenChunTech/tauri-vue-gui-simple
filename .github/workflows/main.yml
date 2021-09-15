@@ -35,6 +35,8 @@ jobs:
           
       - name: build
         run : |
+          yarn
+          yarn tauri info
           yarn tauri build
 
       - name: compress Release
@@ -47,8 +49,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: ubuntu-latest ${{ github.ref }}
+          tag_name: ubuntu-${{ github.ref }}
+          release_name: ubuntu-${{ github.ref }}
           draft: false
           prerelease: false
 
@@ -81,6 +83,7 @@ jobs:
       - name: build
         run : |
           yarn
+          yarn tauri info
           yarn tauri build
           
       - name: compress Release
@@ -93,8 +96,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
-          release_name: macos-release ${{ github.ref }}
+          tag_name: macos-${{ github.ref }}
+          release_name: macos-${{ github.ref }}
           draft: false
           prerelease: false
 
