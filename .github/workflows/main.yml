@@ -34,7 +34,7 @@ jobs:
 
       - name: compress Release
         run : |
-          cd ./src-tauri/target/release/ && zip -r ubuntu-release.zip bundle tauri-vue-gui-simple-action*
+          cd ./src-tauri/target/release/ && zip -r ubuntu-release.zip ./bundle/*
           
       - name: Create Release
         id: create_release
@@ -81,7 +81,7 @@ jobs:
           
       - name: compress Release
         run : |
-          cd ./src-tauri/target/release/ && zip -r mac-release.zip bundle tauri-vue-gui-simple-action*  
+          cd ./src-tauri/target/release/ && zip -r mac-release.zip ./bundle/*
   
       - name: Create Release
         id: create_release
@@ -131,7 +131,7 @@ jobs:
           
       - name: compress Release
         run : |
-          cd ./src-tauri/target/release/ && Compress-Archive -Path .\bundle 'win-release.zip'
+          cd ./src-tauri/target/release/ && Compress-Archive -Path .\src-tauri\target\release\bundle\msi\* 'win-release.zip' && Compress-Archive -Path .\src-tauri\target\release\tauri-vue-gui-simple* -Update 'win-release.zip'
   
       - name: Create Release
         id: create_release
